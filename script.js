@@ -33,6 +33,7 @@ let calculator = {
             case "=":
 
                 calculator.evaluate();
+                
             break;
 
             case "1":
@@ -74,7 +75,7 @@ let calculator = {
                     calculator.addToMathRow(divHtmlText);
                 }
 
-                break;
+            break;
 
             case "0":
             case "00":
@@ -128,12 +129,15 @@ let calculator = {
                     calculator.addToMathRow(divHtmlText);
                 }
 
-                break;
+            break;
+
 
             case "C":
+
                 calculator.clearInput();
                 calculator.clearMathRow();
-                break;
+                
+            break;
 
         };
 

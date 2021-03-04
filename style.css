@@ -1,0 +1,57 @@
+input {
+    display: block;
+    text-align: right;
+    width: 17rem;
+    border: 1px solid darkgray;
+    font-size: 2rem;
+    margin: 2rem 0.3rem 0.3rem 0.3rem;
+
+}
+
+.numbers button, .operators button {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    margin: 0.2rem;
+    border: 2px solid darkgray;
+    outline-width: 0;
+}
+
+button:hover {
+    border-color: rgb(104, 104, 104);
+}
+
+button:active{
+    background-color: rgb(211, 211, 211);
+    font-weight: bold;
+}
+
+.panels {
+    display: flex;
+}
+
+.left-panel, .right-panel {
+    margin: 0.3rem;
+}
+
+.calculator {
+    width: 19.5rem;
+    height: 20rem;
+    display: grid;
+    justify-items: center;
+    row-gap: 0.1rem;
+    background-color: silver;
+    padding-bottom: 0.5rem;
+}
+
+button.result {
+    background-color: rgb(136, 204, 250);
+}
+
+button.clear {
+    background-color: coral;
+}
+
+button.big-button {
+    height: 6.4rem;
+}

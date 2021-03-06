@@ -32,8 +32,96 @@ let calculator = {
         switch (divHtmlText) {
             case "=":
 
-                calculator.evaluate();
-                
+                if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "+") { 
+                    calculator.correct();
+                    calculator.evaluate();
+                    console.log("It's a operation after clicking a = sign");
+                }
+
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "-") {
+                    calculator.correct();
+                    calculator.evaluate();
+                    console.log("It's a operation after clicking a = sign");
+                }
+
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "*") {
+                    calculator.correct();
+                    calculator.evaluate();
+                    console.log("It's a operation after clicking a = sign");
+                }
+
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "/") {
+                    calculator.correct();
+                    calculator.evaluate();
+                    console.log("It's a operation after clicking a = sign");
+                }
+
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == ".") {
+                    calculator.correct();
+                    calculator.evaluate();
+                    console.log("It's a operation after clicking a = sign");
+                }
+
+                else {
+                    calculator.evaluate();
+                    console.log("It's a operation after clicking a = sign");
+                }
+
+            break;
+
+            case ".":
+
+                if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == ".") {
+                    console.log("It's a operation after clicking a . if the last character was a . sign");
+                }
+
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "+") {
+                    console.log("It's a operation after clicking a . if the last character was a + sign");
+                }
+
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "-") {
+                    console.log("It's a operation after clicking a . if the last character was a - sign");
+                }
+
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "*") {
+                    console.log("It's a operation after clicking a . if the last character was a * sign");
+                }
+
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "/") {
+                    console.log("It's a operation after clicking a . if the last character was a / sign");
+                }
+
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == undefined) {
+                    calculator.addToInput("0");
+                    calculator.addToInput(divHtmlText);
+                    calculator.addToMathRow("0");
+                    calculator.addToMathRow(divHtmlText);
+                    console.log("It's a operation after clicking a . if the mathRow was empty");
+                }
+
+                else {
+                    for (let g = 0; g < calculator.input.value.length; g++) {
+                        let zz = calculator.input.value[g];
+
+                        if (zz == ".") {
+                            console.log("It's a operation after clicking a . if there was already a . in the input");
+                            break;
+                        }
+
+                        else {
+                            if (g == calculator.input.value.length - 1) {
+                                calculator.addToInput(".");
+                                calculator.addToMathRow(".");
+                                console.log("It's a operation after clicking a . if there was already a number and no . in input yet");
+                            }
+
+                            else {
+                                console.log("Do nothing")
+                            }
+                        }
+                    };
+                }
+
             break;
 
             case "1":
@@ -46,55 +134,71 @@ let calculator = {
             case "8":
             case "9":
 
-                if (calculator.mathRow[calculator.mathRow.length - 1].value = "+") {
+
+                if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "+") {
                     calculator.clearInput();
                     calculator.addToInput(divHtmlText);
                     calculator.addToMathRow(divHtmlText);
+                    console.log("It's a operation after clicking a number if the last character was a + sign");
                 }
 
-                else if (calculator.mathRow[calculator.mathRow.length - 1].value = "-") {
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "-") {
                     calculator.clearInput();
                     calculator.addToInput(divHtmlText);
                     calculator.addToMathRow(divHtmlText);
+                    console.log("It's a operation after clicking a number if the last character was a - sign");
                 }
 
-                else if (calculator.mathRow[calculator.mathRow.length - 1].value = "*") {
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "*") {
                     calculator.clearInput();
                     calculator.addToInput(divHtmlText);
                     calculator.addToMathRow(divHtmlText);
+                    console.log("It's a operation after clicking a number if the last character was a * sign");
                 }
 
-                else if (calculator.mathRow[calculator.mathRow.length - 1].value = "/") {
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "/") {
                     calculator.clearInput();
                     calculator.addToInput(divHtmlText);
                     calculator.addToMathRow(divHtmlText);
+                    console.log("It's a operation after clicking a number if the last character was a / sign");
                 }
 
                 else {
                     calculator.addToInput(divHtmlText);
                     calculator.addToMathRow(divHtmlText);
+                    console.log("It's a operation after clicking a number if the last character wasn't a operator");
                 }
+
 
             break;
 
             case "0":
             case "00":
 
-                if (calculator.mathRow[calculator.mathRow.length - 1].value = "0") { }
+                if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == undefined) {
+                    console.log("It's a operation after clicking a 0 if the mathRow was empty");
+                 }
 
-                else if (calculator.mathRow[calculator.mathRow.length - 1].value = "") { }
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "-") {
+                    console.log("It's a operation after clicking a 0 if the last character was a - sign");
+                 }
 
-                else if (calculator.mathRow[calculator.mathRow.length - 1].value = "-") { }
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "+") {
+                    console.log("It's a operation after clicking a 0 if the last character was a + sign");
+                 }
 
-                else if (calculator.mathRow[calculator.mathRow.length - 1].value = "+") { }
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "*") {
+                    console.log("It's a operation after clicking a 0 if the last character was a * sign");
+                 }
 
-                else if (calculator.mathRow[calculator.mathRow.length - 1].value = "*") { }
-
-                else if (calculator.mathRow[calculator.mathRow.length - 1].value = "/") { }
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "/") {
+                    console.log("It's a operation after clicking a 0 if the last character was a / sign");
+                 }
 
                 else {
                     calculator.addToInput(divHtmlText);
                     calculator.addToMathRow(divHtmlText);
+                    console.log("It's a operation after clicking a 0 if the last character was a number");
                 }
 
             break;
@@ -104,29 +208,44 @@ let calculator = {
             case "*":
             case "/":
 
-                if (calculator.mathRow[calculator.mathRow.length - 1].value = "+") { 
+                if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "+") { 
                     calculator.correct();
                     calculator.addToMathRow(divHtmlText);
+                    console.log("It's a operation after clicking a operator if the last character was a + sign");
                 }
 
-                else if (calculator.mathRow[calculator.mathRow.length - 1].value = "-") {
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "-") {
                     calculator.correct();
                     calculator.addToMathRow(divHtmlText);
+                    console.log("It's a operation after clicking a operator if the last character was a - sign");
                 }
 
 
-                else if (calculator.mathRow[calculator.mathRow.length - 1].value = "*") {
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "*") {
                     calculator.correct();
                     calculator.addToMathRow(divHtmlText);
+                    console.log("It's a operation after clicking a operator if the last character was a * sign");
                 }
 
-                else if (calculator.mathRow[calculator.mathRow.length - 1].value = "/") {
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == "/") { 
                     calculator.correct();
                     calculator.addToMathRow(divHtmlText);
+                    console.log("It's a operation after clicking a operator if the last character was a / sign");
+                }
+
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == undefined) { 
+                    calculator.correct();
+                    calculator.addToMathRow(divHtmlText);
+                    console.log("It's a operation after clicking a operator if the mathRow was empty");
+                }
+
+                else if (calculator.mathRow.value[calculator.mathRow.value.length - 1] == ".") { 
+                    console.log("It's a operation after clicking a operator if the last character was a . ");
                 }
 
                 else {
                     calculator.addToMathRow(divHtmlText);
+                    console.log("It's a operation after clicking a operator if the last character was a number");
                 }
 
             break;
@@ -136,6 +255,7 @@ let calculator = {
 
                 calculator.clearInput();
                 calculator.clearMathRow();
+                console.log("It's a operation after clicking a C");
                 
             break;
 
@@ -145,29 +265,35 @@ let calculator = {
 
     addToInput: function (str) {
         this.input.value += str;
+        console.log("It's a operation after inducing a function addToInput");
     },
 
     addToMathRow: function (str) {
         this.mathRow.value += str;
+        console.log("It's a operation after inducing a function addToMathRow");
     },
 
     evaluate: function () {
-        let result = math.evaluate(calculator.mathRow.value);
+        let result = Math.round(math.evaluate(calculator.mathRow.value) * 1000) / 1000;
         calculator.mathRow.value = result;
         calculator.input.value = result;
+        console.log("It's a operation after inducing a function evaluate");
     },
 
     clearInput: function () {
         calculator.input.value = "";
+        console.log("It's a operation after inducing a function clearInput");
     },
 
     clearMathRow: function () {
         calculator.mathRow.value = "";
+        console.log("It's a operation after inducing a function clearMathRow");
     },
 
     correct: function () {
         let d = calculator.mathRow.value;
         calculator.mathRow.value = d.slice(0, -1);
+        console.log("It's a operation after inducing a function correct");
     }
 
 }

@@ -1,3 +1,5 @@
+import {buttons} from "script.js";
+
 (() => {
     let debounceTimeout;
 

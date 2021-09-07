@@ -162,7 +162,7 @@ const calculator = {
     }
 };
 
-const buttons = document.querySelectorAll('.button');
+export const buttons = document.querySelectorAll('.button');
 const activatedButtons = document.querySelectorAll('.inactive');
 const topRow = document.querySelector('#screen-top-part');
 const bottomRow = document.querySelector('#screen-bottom-part');

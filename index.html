@@ -7,46 +7,46 @@
     <title>Calculator</title>
     <link href="style.css" rel="stylesheet">
     <script src="script.js" defer></script>
-    <script src="navigation.js" defer></script>
+    <script src="visuals.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Armata&family=Electrolize&family=Play:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="calculator-body">
-        <div class="calculator-screen">
-            <div class="screen-top-part"></div>
-            <div class="screen-bottom-part">0</div>
+    <div id="calculator-body">
+        <div id="calculator-screen">
+            <div id="screen-top-part"></div>
+            <div id="screen-bottom-part">0</div>
         </div>
-        <div class="calculator-panel">
-            <div class="panel-top-part">
-                <button class="button top inactive" onclick="memoryUpdate(this)">MC</button>
-                <button class="button top inactive" onclick="memoryUpdate(this)">MR</button>
-                <button class="button top" onclick="memoryUpdate(this)">M+</button>
-                <button class="button top" onclick="memoryUpdate(this)">M-</button>
-                <button class="button top" onclick="memoryUpdate(this)">MS</button>
+        <div id="calculator-panel">
+            <div id="panel-top-part">
+                <button class="button top inactive" data-function-name="memory">MC</button>
+                <button class="button top inactive" data-function-name="memory">MR</button>
+                <button class="button top" data-function-name="memory">M+</button>
+                <button class="button top" data-function-name="memory">M-</button>
+                <button class="button top" data-function-name="memory">MS</button>
             </div>
-            <div class="panel-bottom-part">
-                <button class="button clear" onclick="clearAll()" data-value="Escape">C</button>
-                <button class="button" onclick="clearEntry()" data-value="`">CE</button>
-                <button class="button" onclick="deleteLast()" data-value="Backspace">←</button>
-                <button class="button operator" onclick="basicOperation(this)" data-value="/">÷</button>
-                <button class="button dark" onclick="appendNumber(this)">7</button>
-                <button class="button dark" onclick="appendNumber(this)">8</button>
-                <button class="button dark" onclick="appendNumber(this)">9</button>
-                <button class="button operator" onclick="basicOperation(this)" data-value="*">×</button>
-                <button class="button dark" onclick="appendNumber(this)">4</button>
-                <button class="button dark" onclick="appendNumber(this)">5</button>
-                <button class="button dark" onclick="appendNumber(this)">6</button>
-                <button class="button operator" onclick="basicOperation(this)"  data-value="-">-</button>
-                <button class="button dark" onclick="appendNumber(this)">1</button>
-                <button class="button dark" onclick="appendNumber(this)">2</button>
-                <button class="button dark" onclick="appendNumber(this)">3</button>
-                <button class="button operator" onclick="basicOperation(this)" data-value="+">+</button>
-                <button class="button dark" onclick="minus()" data-value="m">±</button>
-                <button class="button dark" onclick="appendNumber(this)">0</button>
-                <button class="button dark" onclick="decimalPoint()">.</button>
-                <button class="button operator equals" onclick="equals()">=</button>
+            <div id="panel-bottom-part">
+                <button class="button clear" data-function-name="clearAll" data-value="Escape">C</button>
+                <button class="button" data-function-name="clear" data-value="`">CE</button>
+                <button class="button" data-function-name="delete" data-value="Backspace">←</button>
+                <button class="button operator" data-function-name="operator" data-value="/">÷</button>
+                <button class="button dark" data-function-name="number">7</button>
+                <button class="button dark" data-function-name="number">8</button>
+                <button class="button dark" data-function-name="number">9</button>
+                <button class="button operator" data-function-name="operator" data-value="*">×</button>
+                <button class="button dark" data-function-name="number">4</button>
+                <button class="button dark" data-function-name="number">5</button>
+                <button class="button dark" data-function-name="number">6</button>
+                <button class="button operator" data-function-name="operator" data-value="-">-</button>
+                <button class="button dark" data-function-name="number">1</button>
+                <button class="button dark" data-function-name="number">2</button>
+                <button class="button dark" data-function-name="number">3</button>
+                <button class="button operator" data-function-name="operator" data-value="+">+</button>
+                <button class="button dark" data-value="m" data-function-name="minus">±</button>
+                <button class="button dark" data-function-name="number">0</button>
+                <button class="button dark" data-function-name="decimal">.</button>
+                <button class="button operator equals" data-function-name="equals">=</button>
             </div>
         </div>
     </div>

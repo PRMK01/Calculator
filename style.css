@@ -14,7 +14,7 @@ body {
     user-select: none
 }
 
-.calculator-body {
+#calculator-body {
     --screen-height: 20%;
     --top-panel-height: 10%; 
     width: 25vw;
@@ -24,7 +24,7 @@ body {
     padding-bottom: .24vw;
 }
 
-.calculator-screen {
+#calculator-screen {
     height: var(--screen-height);
     font-family: 'Play', sans-serif;
     font-weight: 700;
@@ -33,7 +33,7 @@ body {
     position: relative;
 }
 
-.screen-top-part {
+#screen-top-part {
     margin-right: .3vw;
     font-size: 1.03vw;
     color: rgb(202, 202, 202);
@@ -43,24 +43,24 @@ body {
     right: 6%;
 }
 
-.screen-bottom-part {
+#screen-bottom-part {
     font-size: 2.18vw;
     position: absolute;
     bottom: .8vw;
     right: 6%;
 }
 
-.calculator-panel {
+#calculator-panel {
     height: calc(100% - var(--screen-height)); 
 }
 
-.panel-top-part {
+#panel-top-part {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     height: var(--top-panel-height);
 }
 
-.panel-bottom-part {
+#panel-bottom-part {
     display: grid;
     height: calc(100% - var(--top-panel-height));
     grid-template-columns: repeat(4, 1fr);
@@ -127,17 +127,17 @@ body {
 }
 
 @media (orientation: portrait) {
-    .calculator-body {
+    #calculator-body {
         width: clamp(213px, 75vw, 2130px);
         height: clamp(255px, 90vw, 2550px);
     }
 
-    .screen-top-part {
+    #screen-top-part {
         font-size: clamp(9px, 3.09vw, 90px);
         bottom: clamp(31px, 9.9vw, 310px);
     }
     
-    .screen-bottom-part {
+    #screen-bottom-part {
         font-size: clamp(19px, 6.5vw, 190px);
         bottom: clamp(7px, 2vw, 70px);
     }

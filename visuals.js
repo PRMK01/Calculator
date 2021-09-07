@@ -4,7 +4,7 @@
     document.addEventListener('keyup', handlekeys)
 
     function handlekeys (ev) {
-        for (button of buttons) {
+        for (let button of buttons) {
             if (button.innerText == ev.key || button.dataset.value == ev.key) {
                 button.click();
             }

@@ -9,13 +9,13 @@ const calculator = {
     memory (target) {
         calculator.bottomRowActive = false;
         calculator.memoryData.active = true;
-        for (button of activatedButtons) {
+        for (let button of activatedButtons) {
             button.classList.remove('inactive');
         }
         switch (target.textContent) {
             case 'MC': {
                 calculator.memoryData.value = '';
-                for (button of activatedButtons) {
+                for (let button of activatedButtons) {
                     button.classList.add('inactive');
                 }
                 break

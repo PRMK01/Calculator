@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(#61c0ff, #111111);
+    overflow: hidden;
+    user-select: none
+}
+
+.calculator-body {
+    --screen-height: 20%;
+    --top-panel-height: 10%; 
+    width: 25vw;
+    height: 30vw;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: .36vw;
+    padding-bottom: .24vw;
+}
+
+.calculator-screen {
+    height: var(--screen-height);
+    font-family: 'Play', sans-serif;
+    font-weight: 700;
+    color: white;
+    text-align: right;
+    position: relative;
+}
+
+.screen-top-part {
+    margin-right: .3vw;
+    font-size: 1.03vw;
+    color: rgb(202, 202, 202);
+    font-weight: 400;
+    position: absolute;
+    bottom: 3.6vw;
+    right: 6%;
+}
+
+.screen-bottom-part {
+    font-size: 2.18vw;
+    position: absolute;
+    bottom: .8vw;
+    right: 6%;
+}
+
+.calculator-panel {
+    height: calc(100% - var(--screen-height)); 
+}
+
+.panel-top-part {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: var(--top-panel-height);
+}
+
+.panel-bottom-part {
+    display: grid;
+    height: calc(100% - var(--top-panel-height));
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: clamp(2px, .12vw, 5px);
+    margin: .12vw;
+}
+
+.button {
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    color: white;
+    font-family: 'Electrolize', sans-serif;
+    font-weight: 400;
+    font-size: 1.4vw;
+    padding: 0;
+}
+
+.operator {
+    font-size: 2.2vw;
+}
+
+.top {
+    font-family: 'Armata', sans-serif;
+    font-size: .8vw;
+    background: none;
+}
+
+.inactive {
+    color:rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+}
+
+.dark {
+    font-size: 1.6vw;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.equals {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.active {
+    background:rgba(255, 255, 255, 0.35);
+}
+
+@media (hover: hover) {
+    .button:hover { background:rgba(255, 255, 255, 0.2); cursor: pointer; }
+    .clear:hover { background: rgba(255, 91, 91, 0.25); }
+    .equals:hover { background:rgba(99, 166, 255, 0.25); }
+}
+
+.button:active {
+    background:rgba(255, 255, 255, 0.35);
+}
+
+.equals:active {
+    background:rgba(99, 166, 255, 0.35);
+}
+
+.clear:active {
+    background: rgba(255, 91, 91, 0.35);
+}
+
+@media (orientation: portrait) {
+    .calculator-body {
+        width: clamp(213px, 75vw, 2130px);
+        height: clamp(255px, 90vw, 2550px);
+    }
+
+    .screen-top-part {
+        font-size: clamp(9px, 3.09vw, 90px);
+        bottom: clamp(31px, 9.9vw, 310px);
+    }
+    
+    .screen-bottom-part {
+        font-size: clamp(19px, 6.5vw, 190px);
+        bottom: clamp(7px, 2vw, 70px);
+    }
+
+    .button {
+        font-size: clamp(13px, 3.18vw, 130px);
+    }
+    
+    .operator {
+        font-size: clamp(21px, 4.2vw, 210px);
+    }
+    
+    .top {
+        font-size: clamp(8px, 1.82vw, 80px);
+    }
+    
+    .dark {
+        font-size: clamp(15px, 3.63vw, 150px);
+    }
+}

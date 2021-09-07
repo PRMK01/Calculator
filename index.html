@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <script src="navigation.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Armata&family=Electrolize&family=Play:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calculator-body">
+        <div class="calculator-screen">
+            <div class="screen-top-part"></div>
+            <div class="screen-bottom-part">0</div>
+        </div>
+        <div class="calculator-panel">
+            <div class="panel-top-part">
+                <button class="button top inactive" onclick="memoryUpdate(this)">MC</button>
+                <button class="button top inactive" onclick="memoryUpdate(this)">MR</button>
+                <button class="button top" onclick="memoryUpdate(this)">M+</button>
+                <button class="button top" onclick="memoryUpdate(this)">M-</button>
+                <button class="button top" onclick="memoryUpdate(this)">MS</button>
+            </div>
+            <div class="panel-bottom-part">
+                <button class="button clear" onclick="clearAll()" data-value="Escape">C</button>
+                <button class="button" onclick="clearEntry()" data-value="`">CE</button>
+                <button class="button" onclick="deleteLast()" data-value="Backspace">←</button>
+                <button class="button operator" onclick="basicOperation(this)" data-value="/">÷</button>
+                <button class="button dark" onclick="appendNumber(this)">7</button>
+                <button class="button dark" onclick="appendNumber(this)">8</button>
+                <button class="button dark" onclick="appendNumber(this)">9</button>
+                <button class="button operator" onclick="basicOperation(this)" data-value="*">×</button>
+                <button class="button dark" onclick="appendNumber(this)">4</button>
+                <button class="button dark" onclick="appendNumber(this)">5</button>
+                <button class="button dark" onclick="appendNumber(this)">6</button>
+                <button class="button operator" onclick="basicOperation(this)"  data-value="-">-</button>
+                <button class="button dark" onclick="appendNumber(this)">1</button>
+                <button class="button dark" onclick="appendNumber(this)">2</button>
+                <button class="button dark" onclick="appendNumber(this)">3</button>
+                <button class="button operator" onclick="basicOperation(this)" data-value="+">+</button>
+                <button class="button dark" onclick="minus()" data-value="m">±</button>
+                <button class="button dark" onclick="appendNumber(this)">0</button>
+                <button class="button dark" onclick="decimalPoint()">.</button>
+                <button class="button operator equals" onclick="equals()">=</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

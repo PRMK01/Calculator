@@ -1,4 +1,4 @@
-import {buttons} from "script.js";
+import {buttons} from "./script.js";
 
 (() => {
     let debounceTimeout;

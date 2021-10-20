@@ -37,6 +37,7 @@ const calculator = {
     },
 
     number (target) {
+        calculator.memoryData.active = false;
         if (calculator.bottomRowActive) {
             if (bottomRow.textContent === '0') {
                 bottomRow.textContent = target.textContent;
@@ -87,6 +88,9 @@ const calculator = {
             if (/÷/.test(topRow.textContent.slice(-1)) && eval(bottomRow.textContent) === 0) {
                 alert("You can't divide by 0!");
                 return
+            } else if (eval(topRow.textContent) === Infinity || eval(topRow.textContent) === -Infinity) {
+                alert("To infinity and beyond!\nYou just reached infinity. Clear your calculator, so you can use it again.");
+                return
             } else {
                 calculator.expression = `(${calculator.expression}(${bottomRow.textContent}))`; 
                 topRow.textContent = calculator.evaluate() + ' ' +  target.textContent;
@@ -113,6 +117,10 @@ const calculator = {
         }
         if (/÷/.test(topRow.textContent.slice(-1)) && eval(bottomRow.textContent) === 0) {
             alert("You can't divide by 0!");
+            return
+        }
+        if (eval(topRow.textContent) === Infinity || eval(topRow.textContent) === -Infinity) {
+            alert("To infinity and beyond!\nYou just reached infinity. Clear your calculator, so you can use it again.");
             return
         }
         if (bottomRow.textContent.slice(-1) === '.') {

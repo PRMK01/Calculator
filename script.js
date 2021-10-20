@@ -82,13 +82,13 @@ const calculator = {
             }
         }
     },
-    
+     
     operator (target) {
         if ((calculator.bottomRowActive || calculator.memoryData.active) && !(topRow.textContent.includes('='))) {
             if (/÷/.test(topRow.textContent.slice(-1)) && eval(bottomRow.textContent) === 0) {
                 alert("You can't divide by 0!");
                 return
-            } else if (calculator.evaluate() === Infinity || calculator.evaluate() === -Infinity) {
+            } else if (/Infinity/.test(topRow.textContent) || /-Infinity/.test(topRow.textContent)) {
                 alert("To infinity and beyond!\nYou just reached infinity. Clear your calculator, so you can use it again.");
                 return
             } else {
@@ -119,7 +119,7 @@ const calculator = {
             alert("You can't divide by 0!");
             return
         }
-        if (calculator.evaluate() === Infinity || calculator.evaluate() === -Infinity) {
+        if (/Infinity/.test(topRow.textContent) || /-Infinity/.test(topRow.textContent)) {
             alert("To infinity and beyond!\nYou just reached infinity. Clear your calculator, so you can use it again.");
             return
         }

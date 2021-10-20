@@ -88,7 +88,7 @@ const calculator = {
             if (/÷/.test(topRow.textContent.slice(-1)) && eval(bottomRow.textContent) === 0) {
                 alert("You can't divide by 0!");
                 return
-            } else if (eval(topRow.textContent) === Infinity || eval(topRow.textContent) === -Infinity) {
+            } else if (calculator.evaluate() === Infinity || calculator.evaluate() === -Infinity) {
                 alert("To infinity and beyond!\nYou just reached infinity. Clear your calculator, so you can use it again.");
                 return
             } else {
@@ -119,7 +119,7 @@ const calculator = {
             alert("You can't divide by 0!");
             return
         }
-        if (eval(topRow.textContent) === Infinity || eval(topRow.textContent) === -Infinity) {
+        if (calculator.evaluate() === Infinity || calculator.evaluate() === -Infinity) {
             alert("To infinity and beyond!\nYou just reached infinity. Clear your calculator, so you can use it again.");
             return
         }

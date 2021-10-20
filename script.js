@@ -84,11 +84,16 @@ const calculator = {
     
     operator (target) {
         if ((calculator.bottomRowActive || calculator.memoryData.active) && !(topRow.textContent.includes('='))) {
-            calculator.expression = `(${calculator.expression}(${bottomRow.textContent}))`; 
-            topRow.textContent = calculator.evaluate() + ' ' +  target.textContent;
-            calculator.expression += target.dataset.value;
-            calculator.bottomRowActive = false;
-            calculator.memoryData.active = false;
+            if (/÷/.test(topRow.textContent.slice(-1)) && eval(bottomRow.textContent) === 0) {
+                alert("You can't divide by 0!");
+                return
+            } else {
+                calculator.expression = `(${calculator.expression}(${bottomRow.textContent}))`; 
+                topRow.textContent = calculator.evaluate() + ' ' +  target.textContent;
+                calculator.expression += target.dataset.value;
+                calculator.bottomRowActive = false;
+                calculator.memoryData.active = false;
+            }
         } else {
             if (/\+|-|÷|×/.test(topRow.textContent.slice(-1))) {
                 topRow.textContent = topRow.textContent.slice(0, -1) + target.textContent;
@@ -104,6 +109,10 @@ const calculator = {
         calculator.bottomRowActive = false;
         calculator.memoryData.active = false;
         if (topRow.textContent.includes('=')) {
+            return
+        }
+        if (/÷/.test(topRow.textContent.slice(-1)) && eval(bottomRow.textContent) === 0) {
+            alert("You can't divide by 0!");
             return
         }
         if (bottomRow.textContent.slice(-1) === '.') {
